@@ -51,6 +51,10 @@ class AMyProjectCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UMotionControllerComponent* L_MotionController;
 
+
+	UPROPERTY(EditAnywhere, Category = "Cube actor")
+		TSubclassOf<AMyActor>* PlacableActorTemplate;
+
 public:
 	AMyProjectCharacter();
 
