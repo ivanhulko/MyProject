@@ -11,15 +11,13 @@ AMyActor::AMyActor()
 
 	Health = 100.0f;
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Static_Mesh");
+	RootComponent = StaticMesh;
 }
 
 // Called when the game starts or when spawned
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
-
-	StaticMesh2 = NewObject<UStaticMeshComponent>(this, TEXT("Static_Mesh_2"));
-	
 }
 
 // Called every frame

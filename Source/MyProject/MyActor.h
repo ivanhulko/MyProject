@@ -24,15 +24,12 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(VisibleAnywhere)
-		UStaticMeshComponent* StaticMesh;
+	UStaticMeshComponent* StaticMesh;
 
 	UPROPERTY(EditAnywhere, Category = "-Misc Settings")
-		float Health = 0.0f;
+	float Health = 0.0f;
 
 	UFUNCTION(BlueprintCallable)
-		void PrintText();
-
-	UPROPERTY(VisibleAnywhere)
-		UStaticMeshComponent* StaticMesh2;
+	void PrintText();
 
 };

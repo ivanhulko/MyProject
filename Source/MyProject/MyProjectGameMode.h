@@ -13,6 +13,10 @@ class AMyProjectGameMode : public AGameModeBase
 
 public:
 	AMyProjectGameMode();
+	TArray<AActor*> Actors;
+
+protected:
+	virtual void BeginPlay() override;
 };
 
 

@@ -13,6 +13,7 @@ class UCameraComponent;
 class UMotionControllerComponent;
 class UAnimMontage;
 class USoundBase;
+class AMyActor;
 
 UCLASS(config=Game)
 class AMyProjectCharacter : public ACharacter
@@ -53,7 +54,7 @@ class AMyProjectCharacter : public ACharacter
 
 
 	UPROPERTY(EditAnywhere, Category = "Cube actor")
-		TSubclassOf<AMyActor>* PlacableActorTemplate;
+	TSubclassOf<AMyActor> PlacableActorTemplate;
 
 public:
 	AMyProjectCharacter();
@@ -89,6 +90,7 @@ public:
 	/** Whether to use motion controller location for aiming. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	uint8 bUsingMotionControllers : 1;
+
 
 protected:
 	
