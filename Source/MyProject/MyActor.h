@@ -32,4 +32,14 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void PrintText();
 
+private:
+	void Grow(float DeltaSeconds);
+
+	float LearpTime;
+
+	UPROPERTY(EditAnywhere)
+	float Growth;
+
+	UPROPERTY(EditAnywhere)
+	float LearpDuration;
 };

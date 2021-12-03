@@ -10,6 +10,9 @@ AMyActor::AMyActor()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Health = 100.0f;
+	LearpDuration = 3.f;
+	LearpTime = 0.f;
+	Growth = 1.1f;
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Static_Mesh");
 	RootComponent = StaticMesh;
 }
@@ -18,13 +21,29 @@ AMyActor::AMyActor()
 void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
+	SetActorScale3D(FVector(0.1f, 0.1f, 0.1f));
 }
 
 // Called every frame
 void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Grow(DeltaTime);
+}
 
+void AMyActor::Grow(float DeltaSeconds)
+{
+	float LearpAlpha = LearpTime / LearpDuration;
+	LearpAlpha *= LearpAlpha;
+	if (LearpTime < LearpDuration)
+	{
+		SetActorScale3D(FMath::Lerp(FVector(0.1f, 0.1f, 0.1f), FVector::OneVector, LearpAlpha));
+		LearpTime += Growth * DeltaSeconds;
+	}
+	else
+	{
+		Destroy();
+	}
 }
 
 void AMyActor::PrintText()

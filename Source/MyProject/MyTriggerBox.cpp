@@ -17,6 +17,7 @@ void AMyTriggerBox::Spawn()
 		FTransform Transform;
 		Transform.SetLocation(UKismetMathLibrary::RandomPointInBoundingBox(GetActorLocation(), BoxComponent->GetScaledBoxExtent()));
 		GetWorld()->SpawnActor<AActor>(PlacableActor, Transform);
+		
 		CurrentItems++;
 	}
 }

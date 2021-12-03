@@ -23,7 +23,7 @@ class MYPROJECT_API AMyTriggerBox : public ATriggerBox
 	FTimerHandle Timer;
 
 	UPROPERTY(EditAnywhere)
-	float Delay = 3.f;
+	float Delay;
 
 	UFUNCTION()
 	void Spawn();
