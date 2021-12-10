@@ -22,6 +22,8 @@ class AMyProjectProjectile : public AActor
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
 
+	TArray<AActor*> TargetActors;
+
 public:
 	AMyProjectProjectile();
 

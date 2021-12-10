@@ -11,9 +11,11 @@ class AMyProjectGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+private:
+	TArray<AActor*> Actors;
+
 public:
 	AMyProjectGameMode();
-	TArray<AActor*> Actors;
 
 protected:
 	virtual void BeginPlay() override;

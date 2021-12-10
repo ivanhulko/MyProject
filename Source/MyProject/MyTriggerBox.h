@@ -32,7 +32,7 @@ class MYPROJECT_API AMyTriggerBox : public ATriggerBox
 	TSubclassOf<AMyActor> PlacableActor;
 
 	UPROPERTY(EditAnywhere)
-	int MaxItems = 3;
+	int MaxItems;
 
 	int CurrentItems;
 
